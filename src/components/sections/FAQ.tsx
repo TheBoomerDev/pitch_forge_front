@@ -27,7 +27,27 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section aria-label="Frequently Asked Questions" className="py-24">
+    <section aria-label="Frequently Asked Questions" className="py-24" itemScope itemType="https://schema.org/FAQPage">
+        <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              ${faqs.map((faq, index) => `
+                {
+                  "@type": "Question",
+                  "name": "${faq.question}",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "${faq.answer}"
+                  }
+                }
+              `).join(',')}
+            ]
+          }
+        `}
+      </script>
       <div className="container mx-auto px-4 max-w-3xl">
         <motion.h2 
           className="text-4xl font-bold text-center text-violet-jtc mb-16"
@@ -45,12 +65,12 @@ export default function FAQ() {
         >
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left text-violet-jtc hover:text-violet-jtc/80">
+              <AccordionItem key={index} value={`item-${index}`} itemScope itemType="https://schema.org/Question">
+                <AccordionTrigger className="text-left text-violet-jtc hover:text-violet-jtc/80" itemProp="name">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600">
-                  {faq.answer}
+                <AccordionContent className="text-gray-600" itemProp="acceptedAnswer" itemScope itemType="https://schema.org/Answer">
+                  <span itemProp="text">{faq.answer}</span>
                 </AccordionContent>
               </AccordionItem>
             ))}

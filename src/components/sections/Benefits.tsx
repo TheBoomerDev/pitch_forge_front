@@ -26,7 +26,7 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section aria-label="Service Benefits" className="py-24 bg-gradient-to-br from-white to-tea-green/20">
+    <section aria-label="Service Benefits" className="py-24 bg-gradient-to-br from-white to-tea-green/20" itemScope itemType="https://schema.org/ItemList">
       <div className="container mx-auto px-4">
         <motion.h2 
           className="text-4xl font-bold text-center text-violet-jtc mb-16"
@@ -46,12 +46,14 @@ export default function Benefits() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
+              itemScope itemType="https://schema.org/ListItem"
             >
+              <meta itemProp="position" content={(index + 1).toString()} />
               <div className="w-12 h-12 bg-mindaro rounded-lg flex items-center justify-center mb-4">
                 <benefit.icon className="w-6 h-6 text-violet-jtc" />
               </div>
-              <h3 className="text-xl font-semibold text-violet-jtc mb-2">{benefit.title}</h3>
-              <p className="text-gray-600">{benefit.description}</p>
+              <h3 className="text-xl font-semibold text-violet-jtc mb-2" itemProp="name">{benefit.title}</h3>
+              <p className="text-gray-600" itemProp="description">{benefit.description}</p>
             </motion.div>
           ))}
         </div>

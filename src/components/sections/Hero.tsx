@@ -6,7 +6,24 @@ export default function Hero() {
     <section 
       aria-label="Hero" 
       className="min-h-screen pt-20 flex items-center relative overflow-hidden"
+      itemScope itemType="https://schema.org/WebPageElement"
     >
+        <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPageElement",
+            "name": "Hero Section",
+            "description": "Hero section of the PitchAI website",
+            "url": "https://pitchai.com",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://pitchai.com/generate",
+              "query-input": "required name=search_term_string"
+            }
+          }
+        `}
+      </script>
       <motion.div 
         className="absolute inset-0 -z-10"
         animate={{
@@ -24,6 +41,7 @@ export default function Hero() {
             className="text-5xl md:text-6xl font-bold text-violet-jtc mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            itemProp="headline"
           >
             Create the Perfect Pitch in Minutes with Artificial Intelligence
           </motion.h1>
@@ -33,6 +51,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
+            itemProp="description"
           >
             From scripts to professional audios. Simplify your process with PitchForge.
           </motion.h2>
@@ -42,7 +61,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <Button className="bg-gradient-to-r from-tea-green to-violet-jtc text-white text-lg px-8 py-6">
+            <Button className="bg-gradient-to-r from-tea-green to-violet-jtc text-white text-lg px-8 py-6" aria-label="Generate your Free Pitch">
               Generate your Free Pitch
             </Button>
           </motion.div>

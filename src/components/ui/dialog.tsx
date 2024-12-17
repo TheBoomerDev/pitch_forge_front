@@ -3,6 +3,10 @@ import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+type DialogPortalPropsWithClassName = DialogPrimitive.DialogPortalProps & {
+  className?: string
+}
+
 const Dialog = DialogPrimitive.Root
 
 const DialogTrigger = DialogPrimitive.Trigger
@@ -10,8 +14,11 @@ const DialogTrigger = DialogPrimitive.Trigger
 const DialogPortal = ({
   className,
   ...props
-}: DialogPrimitive.DialogPortalProps) => (
-  <DialogPrimitive.Portal className={cn(className)} {...props} />
+}: DialogPortalPropsWithClassName) => (
+  <DialogPrimitive.Portal {...props}>
+    <div className={cn(className)}>
+    </div>
+  </DialogPrimitive.Portal>
 )
 DialogPortal.displayName = DialogPrimitive.Portal.displayName
 
@@ -34,7 +41,7 @@ const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
-  <DialogPortal>
+  <DialogPortal {...props} className={className}>
     <DialogOverlay />
     <DialogPrimitive.Content
       ref={ref}

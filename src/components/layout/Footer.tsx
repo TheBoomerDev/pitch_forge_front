@@ -9,24 +9,40 @@ const socialLinks = [
 ]
 
 const quickLinks = [
-  { text: "Privacy Policy", href: "#" },
-  { text: "Terms and Conditions", href: "#" },
-  { text: "Contact", href: "#" }
+  { text: "Privacy Policy", href: "#" , label: "Privacy Policy"},
+  { text: "Terms and Conditions", href: "#", label: "Terms and Conditions" },
+  { text: "Contact", href: "#", label: "Contact" }
 ]
 
 export default function Footer() {
   return (
-    <footer className="bg-violet-jtc text-white py-12">
+    <footer className="bg-violet-jtc text-white py-12" itemScope itemType="https://schema.org/WPFooter">
+        <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "PitchForge",
+            "url": "https://PitchForge.com",
+            "logo": "https://PitchForge.com/logo.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "info@PitchForge.com",
+              "contactType": "customer service"
+            }
+          }
+        `}
+      </script>
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Quick Links */}
-          <div>
+          <div itemScope itemType="https://schema.org/SiteNavigationElement">
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.text}>
-                  <Link href={link.href} className="hover:text-tea-green transition-colors">
-                    {link.text}
+                  <Link href={link.href} className="hover:text-tea-green transition-colors" aria-label={link.label} itemProp="url" itemType="https://schema.org/URL">
+                    <span itemProp="name">{link.text}</span>
                   </Link>
                 </li>
               ))}
@@ -34,7 +50,7 @@ export default function Footer() {
           </div>
 
           {/* Social Media */}
-          <div>
+          <div itemScope itemType="https://schema.org/SiteNavigationElement">
             <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -43,6 +59,7 @@ export default function Footer() {
                   href={social.href}
                   className="hover:text-tea-green transition-colors"
                   aria-label={social.label}
+                  itemProp="url" itemType="https://schema.org/URL"
                 >
                   <social.icon className="w-6 h-6" />
                 </Link>
@@ -59,7 +76,7 @@ export default function Footer() {
                 placeholder="Your email"
                 className="px-4 py-2 rounded-md bg-white/10 text-white placeholder:text-white/60 flex-grow"
               />
-              <Button className="bg-tea-green text-violet-jtc hover:bg-tea-green/90">
+              <Button className="bg-tea-green text-violet-jtc hover:bg-tea-green/90" aria-label="Subscribe to newsletter">
                 Subscribe
               </Button>
             </div>
@@ -67,7 +84,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm">
-          <p>© {new Date().getFullYear()} PitchAI. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} PitchForge. All rights reserved.</p>
         </div>
       </div>
     </footer>

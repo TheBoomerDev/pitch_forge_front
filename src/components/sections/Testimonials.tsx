@@ -6,7 +6,7 @@ const testimonials = [
     name: "Ana García",
     company: "TechStart",
     image: "/testimonials/ana.jpg",
-    quote: "Thanks to PitchAI we got our first round of investment. The pitch was perfect.",
+    quote: "Thanks to PitchForge we got our first round of investment. The pitch was perfect.",
     role: "CEO & Founder"
   },
   {
@@ -35,7 +35,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Success Stories with PitchAI
+          Success Stories with PitchForge
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-8">

@@ -34,7 +34,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            From scripts to professional audios. Simplify your process with PitchAI.
+            From scripts to professional audios. Simplify your process with PitchForge.
           </motion.h2>
           
           <motion.div

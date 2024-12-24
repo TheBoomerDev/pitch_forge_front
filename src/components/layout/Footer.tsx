@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Facebook, Twitter, Instagram } from 'lucide-react'
+import ScriptsPage from './ScriptPage'
 
 const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },
@@ -87,6 +88,8 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} PitchForge. All rights reserved.</p>
         </div>
       </div>
+
+      <ScriptsPage />
     </footer>
   )
 }

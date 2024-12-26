@@ -62,7 +62,7 @@ const WaitlistForm = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto p-6 space-y-4">
+    <div id="wait_list" className="w-full max-w-md mx-auto p-6 space-y-4">
       <div className="text-center space-y-2">
         <h2 className="text-2xl font-bold">Join our Waitlist</h2>
         {isEarlyAccess() && (
@@ -85,7 +85,6 @@ const WaitlistForm = () => {
         />
 
         <Button 
-          type="submit"
           className="w-full"
           disabled={status === 'loading' || status === 'success'}
         >

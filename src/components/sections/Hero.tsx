@@ -61,10 +61,12 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <Button className="bg-gradient-to-r from-tea-green to-violet-jtc text-white text-lg px-8 py-6" aria-label="Generate your Free Pitch">
+            <Button href="#wait_list" className="bg-gradient-to-r from-tea-green to-violet-jtc text-white text-lg px-8 py-6" aria-label="Generate your Free Pitch">
               Generate your Free Pitch
             </Button>
           </motion.div>
+
+          <p className="text-[red]">Special Offer for WaitListers</p>
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@ import { Button } from '../ui/button'
 const plans = [
   {
     name: "Elevator Pitch",
-    price: "0$",
+    price: "Free",
     mission:"Capture initial attention in a very short time.",
     features: [
       "1 single pitch per Account",
@@ -13,12 +13,11 @@ const plans = [
       "AI-generated audio",
       "Languages: (En, Es, Fr, De)",
       "Pitch Duration: 1 minute"
-    ],
-    highlight: true
+    ]
   },
   {
     name: "Speed Pitch",
-    price: "49$",
+    price: "49",
     mission:" It is often used in startup competitions where time is tighter.",
     period: "/ud",
     features: [
@@ -27,11 +26,12 @@ const plans = [
       "High quality audio",
       "Pitch Duration: 3 minutes",
       "Email support"
-    ]
+    ],
+    highlight: true
   },
   {
     name: "Showcase Pitch",
-    price: "89$",
+    price: "89",
     mission:"Balance between detail and conciseness, enough to present the problem, the solution and a business breakthrough.",
     period: "/ud",
     features: [
@@ -44,7 +44,7 @@ const plans = [
   },
   {
     name: "Full Pitch",
-    price: "99$",
+    price: "99",
     mission:"In formal meetings with investors or final rounds of pitch competitions.",
     period: "/ud",
     features: [
@@ -54,21 +54,23 @@ const plans = [
       "Pitch Duration: 10 minutes",
       "Premium support (less than 12h)"
     ]
-  },
-  {
-    name: "Business",
-    price: "300$",
-    mission:"For Agencies that do mentoring and Coaching for Startups.",
-    period: "/month",
-    features: [
-      "Everything in the Professional plan",
-      "Custom branding",
-      "API access",
-      "Pitch Duration: [1, 3, 5, 10 min]",
-      "24/7 support"
-    ]
   }
+
 ]
+
+const bussinessPlan = {
+  name: "Business",
+  price: "300",
+  mission:"For Agencies that do mentoring and Coaching for Startups.",
+  period: "/month",
+  features: [
+    "Everything in the Professional plan",
+    "Custom branding",
+    "API access",
+    "Pitch Duration: [1, 3, 5, 10 min]",
+    "24/7 support"
+  ]
+}
 
 export default function Pricing() {
   return (
@@ -126,26 +128,57 @@ export default function Pricing() {
               transition={{ delay: index * 0.1 }}
               itemScope itemType="https://schema.org/Product"
             >
-              <h3 className="text-xl font-semibold text-violet-jtc mb-2" itemProp="name">{plan.name}</h3>
+              <h3 className="text-xl font-bolder text-green-800 mb-2" itemProp="name">{plan.name}</h3>
               <div className="mb-4" itemProp="offers" itemScope itemType="https://schema.org/Offer">
-                <span className="text-4xl font-bold" itemProp="price">{plan.price}</span>
-                {plan.period && <span className="text-gray-600" itemProp="priceCurrency">USD</span>}
+                <span className="text-4xl font-semibold font-gray-800" itemProp="price">{plan.price}</span>
+                <span className="text-gray-600" itemProp="priceCurrency">$</span>
+                <span className="text-gray-400 text-sm" itemProp="priceCurrency">{plan.period}</span> 
               </div>
               <ul className="space-y-3 mb-6">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-tea-green" />
-                    <span>{feature}</span>
+                    <Check className="w-5 h-5 text-gray-400" />
+                    <span className="text-gray-500">{feature}</span>
                   </li>
                 ))}
               </ul>
               <Button 
-                className="w-full bg-tea-green text-violet-jtc hover:bg-tea-green/90" aria-label={`Start with ${plan.name} plan`}
+                className="w-full bg-tea-green text-green-600 hover:bg-tea-green/90" aria-label={`Start with ${plan.name} plan`}
+                href="#wait_list"
               >
-                Start now
+                Please Notify me
               </Button>
             </motion.div>
           ))}
+          <motion.div
+              key={bussinessPlan.name}
+              className={`p-6 rounded-xl border border-gray-200 w-full mx-auto sm:w-4/5 md:w-1/2 lg:w-1/2`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} 
+              itemScope itemType="https://schema.org/Product"
+            >
+              <h3 className="text-xl font-bolder text-green-800 mb-2" itemProp="name">{bussinessPlan.name}</h3>
+              <div className="mb-4" itemProp="offers" itemScope itemType="https://schema.org/Offer">
+                <span className="text-4xl font-semibold font-gray-800" itemProp="price">{bussinessPlan.price}</span>
+                <span className="text-gray-600" itemProp="priceCurrency">$</span>
+                <span className="text-gray-400 text-sm" itemProp="priceCurrency">{bussinessPlan.period}</span> 
+              </div>
+              <ul className="space-y-3 mb-6">
+                {bussinessPlan.features.map((feature) => (
+                  <li key={feature} className="flex items-center gap-2">
+                    <Check className="w-5 h-5 text-gray-400" />
+                    <span className="text-gray-500">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button 
+                className="w-full bg-tea-green text-green-600 hover:bg-tea-green/90" aria-label={`Start with ${bussinessPlan.name} plan`}
+                href="#wait_list"
+              >
+                Please Notify me
+              </Button>
+            </motion.div>
         </div>
       </div>
     </section>

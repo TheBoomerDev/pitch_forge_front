@@ -1,18 +1,17 @@
 import Head from 'next/head'
-import Header from '@/components/layout/Header'
 import Hero from '@/components/sections/Hero'
 import Benefits from '@/components/sections/Benefits'
 import Pricing from '@/components/sections/Pricing'
 import HowItWorks from '@/components/sections/HowItWorks'
 import Testimonials from '@/components/sections/Testimonials'
 import Blog from '@/components/sections/Blog'
-import FAQ from '@/components/sections/FAQ'
-import Footer from '@/components/layout/Footer'
+import FAQ from '@/components/sections/FAQ' 
 import WaitlistForm from '@/components/sections/Waitlist'
 
 export default function Home() {
 
   const SHOW_TESTIMONIALS = false
+  const SHOW_BLOG = false
 
   return (
     <>
@@ -38,19 +37,20 @@ export default function Home() {
       </Head>
       
       <div className="flex flex-col min-h-screen">
-        <Header />
+       
         <main className="flex-grow">
           <Hero />
           <Benefits />
           <HowItWorks />
           <Pricing />
           <WaitlistForm />
-          {SHOW_TESTIMONIALS && <Testimonials />}
-          <Blog />
+          { SHOW_TESTIMONIALS && <Testimonials /> }
+          { SHOW_BLOG && <Blog /> }
           <FAQ />
-        </main>
-        <Footer />
+          
+        </main> 
       </div>
+      
     </>
   )
 }

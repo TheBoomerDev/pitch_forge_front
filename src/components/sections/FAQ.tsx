@@ -27,7 +27,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section aria-label="Frequently Asked Questions" className="py-24" itemScope itemType="https://schema.org/FAQPage">
+    <section id="faq" aria-label="Frequently Asked Questions" className="py-24" itemScope itemType="https://schema.org/FAQPage">
         <script type="application/ld+json">
         {`
           {

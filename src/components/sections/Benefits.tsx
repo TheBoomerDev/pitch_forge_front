@@ -26,7 +26,7 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section aria-label="Service Benefits" className="py-24 bg-gradient-to-br from-white to-tea-green/20" itemScope itemType="https://schema.org/ItemList">
+    <section id="benefits" aria-label="Service Benefits" className="py-24 bg-gradient-to-br from-white to-tea-green/20" itemScope itemType="https://schema.org/ItemList">
       <div className="container mx-auto px-4">
         <motion.h2 
           className="text-4xl font-bold text-center text-violet-jtc mb-16"

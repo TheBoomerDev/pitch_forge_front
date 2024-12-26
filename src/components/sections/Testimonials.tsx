@@ -58,7 +58,7 @@ export default function Testimonials() {
           }
         `}
       </script>
-      <div className="container mx-auto px-4">
+      <div id="testimonials" className="container mx-auto px-4">
         <motion.h2 
           className="text-4xl font-bold text-center text-violet-jtc mb-16"
           initial={{ opacity: 0, y: 20 }}

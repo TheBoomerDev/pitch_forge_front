@@ -25,7 +25,7 @@ const articles = [
 
 export default function Blog() {
   return (
-    <section aria-label="Resources and Blog" className="py-24 bg-gradient-to-br from-rosy-brown/20 to-violet-jtc/10">
+    <section id="blog" aria-label="Resources and Blog" className="py-24 bg-gradient-to-br from-rosy-brown/20 to-violet-jtc/10">
       <div className="container mx-auto px-4">
         <motion.h2 
           className="text-4xl font-bold text-center text-violet-jtc mb-16"

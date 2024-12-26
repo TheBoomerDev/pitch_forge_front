@@ -21,7 +21,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section aria-label="How It Works" className="py-24 bg-gradient-to-br from-violet-jtc/5 to-transparent" itemScope itemType="https://schema.org/ItemList">
+    <section id="how_it_works" aria-label="How It Works" className="py-24 bg-gradient-to-br from-violet-jtc/5 to-transparent" itemScope itemType="https://schema.org/ItemList">
         <script type="application/ld+json">
         {`
           {

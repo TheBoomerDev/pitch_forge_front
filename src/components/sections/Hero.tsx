@@ -35,7 +35,7 @@ export default function Hero() {
         transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
       />
       
-      <div className="container mx-auto px-4">
+      <div id="above_the_fold" className="container mx-auto px-4">
         <div className="max-w-3xl">
           <motion.h1 
             className="text-5xl md:text-6xl font-bold text-violet-jtc mb-6"

@@ -15,27 +15,27 @@ export default function Header() {
         </Link>
         
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/planes" className="hover:text-violet-jtc" aria-label="View plans" itemProp="url" itemType="https://schema.org/URL">
-            <span itemProp="name">Plans</span>
+          <Link href="/#pricing" className="hover:text-violet-jtc" aria-label="View plans" itemProp="url" itemType="https://schema.org/URL">
+            <span itemProp="name">Pricing</span>
           </Link>
-          <Link href="/casos-exito" className="hover:text-violet-jtc" aria-label="View success stories" itemProp="url" itemType="https://schema.org/URL">
-            <span itemProp="name">Success Stories</span>
+          <Link href="/how_it_works" className="hover:text-violet-jtc" aria-label="View How It Works" itemProp="url" itemType="https://schema.org/URL">
+            <span itemProp="name">How?</span>
           </Link>
-          <Link href="/blog" className="hover:text-violet-jtc" aria-label="View blog" itemProp="url" itemType="https://schema.org/URL">
-            <span itemProp="name">Blog</span>
+          <Link href="/#contact" className="hover:text-violet-jtc" aria-label="View Contact" itemProp="url" itemType="https://schema.org/URL">
+            <span itemProp="name">Contact</span>
           </Link>
-          <Link href="/faq" className="hover:text-violet-jtc" aria-label="View FAQ" itemProp="url" itemType="https://schema.org/URL">
+          <Link href="/#faq" className="hover:text-violet-jtc" aria-label="View FAQ" itemProp="url" itemType="https://schema.org/URL">
             <span itemProp="name">FAQ</span>
           </Link>
         </div>
 
         <div className="flex items-center gap-4">
           <Button 
-            variant="ghost"
+            variant="ghost" href="#wait_list"
             className="bg-tea-green text-violet-jtc hover:bg-tea-green/90"
-            aria-label="Try for Free"
+            aria-label="I Want It"
           >
-            Try for Free
+            I Want it
           </Button>
         </div>
       </nav>

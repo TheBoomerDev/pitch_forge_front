@@ -18,7 +18,7 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-violet-jtc text-white py-12" itemScope itemType="https://schema.org/WPFooter">
+    <footer className="bg-violet-jtc text-gray-800 py-12" itemScope itemType="https://schema.org/WPFooter">
         <script type="application/ld+json">
         {`
           {
@@ -35,7 +35,7 @@ export default function Footer() {
           }
         `}
       </script>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 text-gray-800">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Quick Links */}
           <div itemScope itemType="https://schema.org/SiteNavigationElement">
@@ -76,7 +76,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Your email"
-                className="px-4 py-2 rounded-md bg-white/10 text-white placeholder:text-white/60 flex-grow"
+                className="px-4 py-2 rounded-md bg-white/10 text-gray-800 placeholder:text-gray-800/60 flex-grow"
               />
               <Button className="bg-tea-green text-violet-jtc hover:bg-tea-green/90" aria-label="Subscribe to newsletter">
                 Subscribe

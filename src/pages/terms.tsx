@@ -9,7 +9,7 @@ const TermsPage = () => {
                 <meta name="description" content="PitchForge Terms of Service and Legal Information" />
             </Head>
 
-            <main className="min-h-screen bg-white">
+            <main className="pt-20 min-h-screen bg-white">
                 <div className="max-w-4xl mx-auto px-4 py-12">
                     <article className="prose lg:prose-xl">
                         <header>
@@ -142,7 +142,7 @@ const TermsPage = () => {
                                 For general inquiries: [contact@pitchforge.com]<br />
                                 Data Protection Officer: [dpo@pitchforge.com]<br />
                                 EU Representative (Art. 27 GDPR): [eurepresentative@pitchforge.com]<br />
-                                Postal Address: [Company Address]
+                                Postal Address: [info@pitch-forge.com]
                             </p>
                         </section>
                     </article>

@@ -2,6 +2,8 @@ import { SessionProvider } from "next-auth/react"
 import type { AppProps } from "next/app"
 import { useEffect, useState } from "react"
 import "@/styles/globals.css"
+import Header from '@/components/layout/Header'
+import Footer from "@/components/layout/Footer"
 
 export default function App({
   Component,
@@ -20,7 +22,9 @@ export default function App({
 
   return (
     <SessionProvider session={session} refetchInterval={0}>
-      <Component {...pageProps} />
+      <Header />
+      <Component {...pageProps} /> 
+      <Footer />
     </SessionProvider>
   )
 }

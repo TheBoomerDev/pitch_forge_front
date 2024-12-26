@@ -10,9 +10,10 @@ const socialLinks = [
 ]
 
 const quickLinks = [
-  { text: "Privacy Policy", href: "#" , label: "Privacy Policy"},
-  { text: "Terms and Conditions", href: "#", label: "Terms and Conditions" },
-  { text: "Contact", href: "#", label: "Contact" }
+  { text: "Privacy Policy", href: "/privacy" , label: "Privacy Policy"},
+  { text: "Terms and Conditions", href: "/terms", label: "Terms and Conditions" },
+  { text: "Cookies Policy", href: "/cookies", label: "Cookies Policy" },
+  { text: "Contact", href: "/contact", label: "Contact" }
 ]
 
 export default function Footer() {

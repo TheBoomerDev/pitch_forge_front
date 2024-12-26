@@ -18,7 +18,7 @@ const plans = [
   },
   {
     name: "Speed Pitch",
-    price: "29$",
+    price: "49$",
     mission:" It is often used in startup competitions where time is tighter.",
     period: "/ud",
     features: [
@@ -31,7 +31,7 @@ const plans = [
   },
   {
     name: "Showcase Pitch",
-    price: "49$",
+    price: "89$",
     mission:"Balance between detail and conciseness, enough to present the problem, the solution and a business breakthrough.",
     period: "/ud",
     features: [
@@ -44,7 +44,7 @@ const plans = [
   },
   {
     name: "Full Pitch",
-    price: "75$",
+    price: "99$",
     mission:"In formal meetings with investors or final rounds of pitch competitions.",
     period: "/ud",
     features: [
@@ -57,7 +57,7 @@ const plans = [
   },
   {
     name: "Business",
-    price: "99$",
+    price: "300$",
     mission:"For Agencies that do mentoring and Coaching for Startups.",
     period: "/month",
     features: [

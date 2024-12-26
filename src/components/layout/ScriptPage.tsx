@@ -2,8 +2,8 @@ import Script from "next/script";
 
 export default function ScriptsPage() {
     const gAnalytics = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || undefined; // 
-    const HOTJAR_ID = process.env.HOTJAR_ID || '3747794';
-    const HOTJAR_SV = process.env.HOTJAR_SV || '6';
+    const HOTJAR_ID = process.env.NEXT_PUBLIC_HOTJAR_ID || undefined;
+    const HOTJAR_SV = process.env.NEXT_PUBLIC_HOTJAR_SV || '6';
     const TRACKDESK_ID = process.env.TRACKDESK_ID || undefined
 
     return (

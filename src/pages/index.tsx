@@ -8,8 +8,12 @@ import Testimonials from '@/components/sections/Testimonials'
 import Blog from '@/components/sections/Blog'
 import FAQ from '@/components/sections/FAQ'
 import Footer from '@/components/layout/Footer'
+import WaitlistForm from '@/components/sections/Waitlist'
 
 export default function Home() {
+
+  const SHOW_TESTIMONIALS = false
+
   return (
     <>
       <Head>
@@ -40,7 +44,8 @@ export default function Home() {
           <Benefits />
           <HowItWorks />
           <Pricing />
-          <Testimonials />
+          <WaitlistForm />
+          {SHOW_TESTIMONIALS && <Testimonials />}
           <Blog />
           <FAQ />
         </main>

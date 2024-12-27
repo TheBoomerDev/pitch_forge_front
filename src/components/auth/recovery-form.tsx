@@ -111,14 +111,13 @@ export function RecoveryForm() {
         )}
 
         <div className="flex flex-col space-y-4">
-          <Button
-            type="submit"
-            className="w-full"
-            disabled={isLoading}
-            aria-busy={isLoading}
-          >
-            {isLoading ? "Enviando..." : "Enviar instrucciones"}
-          </Button>
+            <Button
+              className="w-full"
+              disabled={isLoading}
+              aria-busy={isLoading}
+            >
+              {isLoading ? "Loading" : "Enviar"}
+            </Button>
 
           <Link
             href="/auth/login"

@@ -137,12 +137,11 @@ export function LoginForm() {
         </div>
 
         <Button
-          type="submit"
           className="w-full"
           disabled={isLoading}
           aria-busy={isLoading}
         >
-          {isLoading ? "Iniciando sesión..." : "Iniciar sesión"}
+          {isLoading ? "Loading" : "Login"}
         </Button>
       </form>
     </div>

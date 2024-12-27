@@ -3,9 +3,9 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { RegisterFormData, registerSchema } from "@/lib/auth/validation"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { RegisterFormData, registerSchema } from "src/lib/auth/validation"
+import { Button } from "src/components/ui/button"
+import { Input } from "src/components/ui/input"
 
 export function RegisterForm() {
   const router = useRouter()
@@ -167,7 +167,6 @@ export function RegisterForm() {
         )}
 
         <Button
-          type="submit"
           className="w-full"
           disabled={isLoading}
           aria-busy={isLoading}

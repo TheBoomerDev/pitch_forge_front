@@ -9,7 +9,11 @@ const handler: NextApiHandler = async (req, res) => {
   // Asegurarse de que la respuesta siempre sea JSON
   res.setHeader('Content-Type', 'application/json')
 
-  if (req.method !== "POST") {
+  const method = req.method
+  const body = req.body
+  console.log('Handler', method, body)
+
+  if (method!== "POST") {
     return res.status(405).json({ 
       success: false,
       message: "Method not allowed" 
@@ -17,7 +21,7 @@ const handler: NextApiHandler = async (req, res) => {
   }
 
   try {
-    const result = registerSchema.safeParse(req.body)
+    const result = registerSchema.safeParse(body)
     
     if (!result.success) {
       return res.status(400).json({ 

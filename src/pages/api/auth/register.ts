@@ -26,7 +26,7 @@ const handler: NextApiHandler = async (req, res) => {
     if (!result.success) {
       return res.status(400).json({ 
         success: false,
-        message: "Datos inválidos",
+        message: "Invalid Data",
         errors: result.error.errors 
       })
     }

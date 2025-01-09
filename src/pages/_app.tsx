@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import "@/styles/globals.css"
 import Header from '@/components/layout/Header'
 import Footer from "@/components/layout/Footer"
+import ScriptsPage from "@/components/layout/ScriptPage"
 
 export default function App({
   Component,
@@ -25,6 +26,7 @@ export default function App({
       <Header />
       <Component {...pageProps} /> 
       <Footer />
+      <ScriptsPage />
     </SessionProvider>
   )
 }

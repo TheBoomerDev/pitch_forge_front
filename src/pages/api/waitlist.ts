@@ -38,11 +38,17 @@ export default async function handler(req, res) {
 
   console.log('WaitList', APIKEY, options )
 
+  resend.contacts.create(options)
+  .then((data)=>{
+    console.log('Contact', data)
+  }).catch((error)=>{
+    console.error('Waitlist error:', error); 
+  })
+
   try {
-    await resend.contacts.create(options);
 
     resend.emails.send({
-      from: 'Your Company <onboarding@pitch-forge.com>',
+      from: 'PitchForge <onboarding@pitch-forge.com>',
       to: email,
       subject: 'Welcome to our Waitlist!',
       html: `<h2>You're on the list!</h2> <p>Thanks for joining our waitlist.</p><p>🎉 You've qualified for our 50% lifetime discount!</p> <p>We'll notify you when we launch.</p>`
